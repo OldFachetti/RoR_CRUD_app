@@ -1,0 +1,29 @@
+<h1 align="center">Data to perform CRUD operations</h1>
+
+
+<%= link_to " Create New User", new_user_path, class:" btn btn-outline-dark fa fa-user-plus btn-lg"%>
+</br> </br> 
+
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>Id</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th colspan="3">CRUD Operations</th>
+      </tr>
+    </thead>
+
+    <tbody> <% @users.each do |users| %></tbody>
+    <tr>
+      <td><%= users.id %></td>
+      <td><%= users.Username %></td>
+      <td><%= users.Email %></td>
+      <td><%= users.Password %></td>
+      <td align="center"><%= link_to ' View', users, class:"btn btn-primary fa fa-eye btn-lg" %></td>
+      <td align="center"><%= link_to ' Edit', edit_user_path(users),class: "btn btn-secondary fa fa-pencil btn-lg" %></td>
+      <td align="center"><%= button_to " Delete", users, method: :delete, class: "btn btn-danger fa fa-trash btn-lg" %></td>
+    </tr>
+    <% end %>
+
